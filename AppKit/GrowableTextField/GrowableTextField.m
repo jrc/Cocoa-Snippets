@@ -37,8 +37,6 @@
 
 - (void)textDidChange:(NSNotification *)notification
 {
-	[super textDidChange:notification];
-
 	// Define the contraining rectangle for the cell
 	NSRect constrainingRect = [[self cell] titleRectForBounds:[self bounds]];
 	constrainingRect.size.height = maxHeight;
@@ -53,6 +51,8 @@
 	frame.size.height = cellSize.height;
 	frame.origin.y += deltaY;
 	[self setFrame:frame];
+
+	[super textDidChange:notification];
 }
 
 @end
