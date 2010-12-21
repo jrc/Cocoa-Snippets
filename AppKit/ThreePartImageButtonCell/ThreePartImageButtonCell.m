@@ -11,7 +11,8 @@
 
 @implementation ThreePartImageButtonCell
 
-@synthesize leftCapWidth, topCapHeight;
+@synthesize startCap, centerFill, endCap;
+@synthesize highlightedStartCap, highlightedCenterFill, highlightedEndCap;
 
 
 - (void)commonInit
@@ -39,18 +40,50 @@
 
 - (void) dealloc
 {
-	[_startCap release];
-	[_centerFill release];
-	[_endCap release];
+	[startCap release];
+	[centerFill release];
+	[endCap release];
+
+	[highlightedStartCap release];
+	[highlightedCenterFill release];
+	[highlightedEndCap release];
+	
 	[super dealloc];
 }
 
 
+- (void)drawBezelWithFrame:(NSRect)frame inView:(NSView*)controlView
+{	
+	// Use alternate (highlighted) button parts if available
+	if ([self isHighlighted] && highlightedStartCap && highlightedCenterFill && highlightedEndCap) {
+		NSDrawThreePartImage(frame, highlightedStartCap, highlightedCenterFill, highlightedEndCap, ([highlightedCenterFill size].height == 1.0), NSCompositeSourceOver, 1.0, [controlView isFlipped]);
+		return;
+	}
+	
+	CGFloat alpha = 1.0;
+	if ([self isHighlighted]) {
+		[[NSColor blackColor] set];
+		NSRectFill(frame);
+		
+		alpha = 0.8;
+	}
+	NSDrawThreePartImage(frame, startCap, centerFill, endCap, ([centerFill size].height == 1.0), NSCompositeSourceOver, alpha, [controlView isFlipped]);	
+}
+
+//- (NSRect)drawTitle:(NSAttributedString*)title withFrame:(NSRect)frame inView:(NSView*)controlView
+//{
+//	frame.origin.y += 2.0;	
+//	
+//	return [super drawTitle:title withFrame:frame inView:controlView];
+//}
+
+@end
+
+
+@implementation ThreePartImageButtonCell (ImageCutting)
+
 - (void)setStretchableImage:(NSImage *)image leftCapWidth:(NSInteger)left topCapHeight:(NSInteger)top
 {
-	leftCapWidth = left;
-	topCapHeight = top;
-	
 	NSRect startCapRect, centerFillRect, endCapRect;
 	
 	if (left > 0.0) {	// horizontal
@@ -65,46 +98,25 @@
 	}
 	
 	// chop up the image into 3 parts
-	[_startCap release];
-	_startCap = [[NSImage alloc] initWithSize:startCapRect.size];
-	[_startCap lockFocus];
+	[startCap release];
+	startCap = [[NSImage alloc] initWithSize:startCapRect.size];
+	[startCap lockFocus];
 	[image drawAtPoint:NSZeroPoint fromRect:startCapRect operation:NSCompositeSourceOver fraction:1.0];
-	[_startCap unlockFocus];
+	[startCap unlockFocus];
 	
-	[_centerFill release];
-	_centerFill = [[NSImage alloc] initWithSize:centerFillRect.size];
-	[_centerFill lockFocus];
+	[centerFill release];
+	centerFill = [[NSImage alloc] initWithSize:centerFillRect.size];
+	[centerFill lockFocus];
 	[image drawAtPoint:NSZeroPoint fromRect:centerFillRect operation:NSCompositeSourceOver fraction:1.0];
-	[_centerFill unlockFocus];
-
-	[_endCap release];
-	_endCap = [[NSImage alloc] initWithSize:endCapRect.size];
-	[_endCap lockFocus];
-	[image drawAtPoint:NSZeroPoint fromRect:endCapRect operation:NSCompositeSourceOver fraction:1.0];
-	[_endCap unlockFocus];
+	[centerFill unlockFocus];
 	
+	[endCap release];
+	endCap = [[NSImage alloc] initWithSize:endCapRect.size];
+	[endCap lockFocus];
+	[image drawAtPoint:NSZeroPoint fromRect:endCapRect operation:NSCompositeSourceOver fraction:1.0];
+	[endCap unlockFocus];
 	
 	[[self controlView] setNeedsDisplay:YES];
-}
-
-- (void)drawBezelWithFrame:(NSRect)frame inView:(NSView*)controlView
-{
-	CGFloat alpha = 1.0;
-	
-	if ([self isHighlighted]) {
-		[[NSColor blackColor] set];
-		NSRectFill(frame);
-		alpha = 0.8;
-	}
-
-	NSDrawThreePartImage(frame, _startCap, _centerFill, _endCap, (leftCapWidth == 0), NSCompositeSourceOver, alpha, [controlView isFlipped]);	
-}
-
-- (NSRect)drawTitle:(NSAttributedString*)title withFrame:(NSRect)frame inView:(NSView*)controlView
-{
-	frame.origin.y += 1.0;	
-	
-	return [super drawTitle:title withFrame:frame inView:controlView];
 }
 
 @end

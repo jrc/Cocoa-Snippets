@@ -14,19 +14,23 @@
  
  See Apple documentation on "Drawing Resizable Textures Using Images" in the Cocoa Drawing Guide
  as well as the NSDrawThreePartImage() function in the Application Kit Functions Reference for more info.
- http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CocoaDrawingGuide/Images/Images.html
- 
- This class supports leftCapWidth or topCapHeight but not both.
- Like UIImage, the middle (stretchable) portion is assumed to be 1 pixel wide.
+ http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/CocoaDrawingGuide/Images/Images.html 
  */
 @interface ThreePartImageButtonCell : NSButtonCell {
-	NSInteger leftCapWidth, topCapHeight;
-	
-	NSImage *_startCap, *_centerFill, *_endCap;
+	NSImage *startCap, *centerFill, *endCap;
+	NSImage *highlightedStartCap, *highlightedCenterFill, *highlightedEndCap;
 }
 
-- (void)setStretchableImage:(NSImage *)image leftCapWidth:(NSInteger)leftCapWidth topCapHeight:(NSInteger)topCapHeight;
+@property(nonatomic, retain) NSImage *startCap, *centerFill, *endCap;
+@property(nonatomic, retain) NSImage *highlightedStartCap, *highlightedCenterFill, *highlightedEndCap;
 
-@property(nonatomic, readonly) NSInteger leftCapWidth, topCapHeight;
+@end
 
+
+@interface ThreePartImageButtonCell (ImageCutting)
+/*
+ This implementation supports leftCapWidth or topCapHeight but not both.
+ Like UIImage, the middle (stretchable) portion is assumed to be 1 pixel wide.
+ */
+- (void)setStretchableImage:(NSImage *)image leftCapWidth:(NSInteger)left topCapHeight:(NSInteger)top;
 @end

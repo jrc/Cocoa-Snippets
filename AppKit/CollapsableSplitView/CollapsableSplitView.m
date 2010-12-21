@@ -11,17 +11,25 @@
 
 @implementation CollapsableSplitView
 
+- (void)commonInit
+{
+	_collapsedSubviewsDict = [[NSMutableDictionary alloc] init];
+}
+
 - (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-		_collapsedSubviewsDict = [[NSMutableDictionary alloc] init];
+		[self commonInit];
     }
     return self;
 }
 
-- (void)awakeFromNib
-{
-	_collapsedSubviewsDict = [[NSMutableDictionary alloc] init];
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+		[self commonInit];
+    }
+    return self;
 }
 
 - (void)dealloc
@@ -39,16 +47,16 @@
 		NSEnumerator *keyEnumerator = [_collapsedSubviewsDict keyEnumerator];
 		id key;
 		while ((key = [keyEnumerator nextObject])) {
-			NSView *tempView = [key pointerValue];
+			NSView *dummyView = [key pointerValue];
 			
 			// If the collapsed placeholder view has now been resized by the user
 			// to the extent that it should be uncollapsed (i.e. expanded) ...
-			NSSize size = [tempView frame].size;
+			NSSize size = [dummyView frame].size;
 			if ((isVertical && size.width > 0.0) || (isVertical == NO && size.height > 0.0)) {
 				// Swap in subview
 				NSView *origSubview = [_collapsedSubviewsDict objectForKey:key];
 				[origSubview setFrameSize:size];
-				[self replaceSubview:tempView with:origSubview];
+				[self replaceSubview:dummyView with:origSubview];
 				[_collapsedSubviewsDict removeObjectForKey:key];
 			}
 		}
@@ -60,15 +68,15 @@
 - (void)collapseSubviewAt:(int)offset
 {
 	NSView *subview = [[self subviews] objectAtIndex:offset];
-	NSView *tempView = [[NSView alloc] initWithFrame:NSZeroRect];
+	NSView *dummyView = [[NSView alloc] initWithFrame:NSZeroRect];
 
 	// Swap out subview
-	id key = [NSValue valueWithPointer:tempView];
+	id key = [NSValue valueWithPointer:dummyView];
 	[_collapsedSubviewsDict setObject:subview forKey:key];
-	[self replaceSubview:subview with:tempView];
+	[self replaceSubview:subview with:dummyView];
 	[self adjustSubviews];
 	
-	[tempView release];
+	[dummyView release];
 }
 
 @end

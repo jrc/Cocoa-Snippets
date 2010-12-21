@@ -10,6 +10,9 @@
 #import <Foundation/Foundation.h>
 
 
+/*
+ Implements fuzzy matching for strings.
+ */
 @interface NSString (Similiarity)
 
 /*
