@@ -35,23 +35,34 @@
     return self;
 }
 
-- (void)textDidChange:(NSNotification *)notification
+- (void)sizeToFit
 {
-	// Define the contraining rectangle for the cell
 	NSRect constrainingRect = [[self cell] titleRectForBounds:[self bounds]];
 	constrainingRect.size.height = maxHeight;
-
+	
 	// Calculate the new cell height
 	[[self cell] stringValue]; // necessary for -cellSizeForBounds: to use with the new string
 	NSSize cellSize = [[self cell] cellSizeForBounds:constrainingRect];
-
+	
 	// Grow the control vertically
 	NSRect frame = [self frame];
 	CGFloat deltaY = NSHeight(frame) - cellSize.height;
 	frame.size.height = cellSize.height;
 	frame.origin.y += deltaY;
 	[self setFrame:frame];
+}
 
+- (void)setObjectValue:(id<NSCopying>)obj // called via bindings
+{
+	// load, then resize
+	[super setObjectValue:obj];	
+	[self sizeToFit];
+}
+
+- (void)textDidChange:(NSNotification *)notification
+{
+	// resize first, then notify
+	[self sizeToFit];	
 	[super textDidChange:notification];
 }
 
