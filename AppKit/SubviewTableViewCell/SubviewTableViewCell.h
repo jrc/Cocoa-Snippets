@@ -10,6 +10,9 @@
 
 
 /*
+ Allows you to embed an NSView in an NSCell, for use with NSTableView.
+ LIMITATIONS: Doesn't work with row reordering. Use at your own risk.
+
  Example usage:
  
  - (void)tableView:(NSTableView *)tableView willDisplayCell:(id)cell forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
@@ -23,10 +26,7 @@
 		 ((SubviewTableViewCell *)cell).subview = subview;
 		 [tableView SubviewTableViewCell_setReusableSubview:subview forTableColumn:tableColumn row:row];
 	 }	
- }
- 
- LIMITATIONS: Doesn't work with row ordering.
- 
+ } 
  */
 @interface SubviewTableViewCell : NSTextFieldCell
 
