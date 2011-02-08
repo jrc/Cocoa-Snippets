@@ -1,6 +1,5 @@
 //
 //  CurvedShadowView.m
-//  Smartr
 //
 //  Created by John Chang on 2010-11-11.
 //  This code is Creative Commons Public Domain.  You may use it for any purpose whatsoever.

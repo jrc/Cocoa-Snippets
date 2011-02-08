@@ -1,6 +1,5 @@
 //
 //  GrowableTextField.m
-//  TextFieldTest
 //
 //  Created by John Chang on 2010-12-18.
 //  This code is Creative Commons Public Domain.  You may use it for any purpose whatsoever.
