@@ -25,10 +25,10 @@ class TemperatureFormatter: NSFormatter {
         numberFormatter.numberStyle = .DecimalStyle
 
         // for unit testing
-        if let localeIdentifier = NSUserDefaults.standardUserDefaults().stringForKey("AppleLocale") {
+        if let localeIdentifier = NSUserDefaults.standardUserDefaults().volatileDomainForName(NSArgumentDomain)["AppleLocale"] as? String {
             numberFormatter.locale = NSLocale(localeIdentifier: localeIdentifier)
         }
-
+        
         unitStyle = .Medium
         super.init()
     }
@@ -96,9 +96,8 @@ class TemperatureFormatter: NSFormatter {
     
     private func localeAppropriateValueAndUnitFromCelsius(numberInCelsius: Double) -> (Double, TemperatureFormatterUnit) {
         var locale = NSLocale.autoupdatingCurrentLocale()
-        
         // for unit testing
-        if let localeIdentifier = NSUserDefaults.standardUserDefaults().stringForKey("AppleLocale") {
+        if let localeIdentifier = NSUserDefaults.standardUserDefaults().volatileDomainForName(NSArgumentDomain)["AppleLocale"] as? String {
             locale = NSLocale(localeIdentifier: localeIdentifier)
         }
         
@@ -134,6 +133,14 @@ class TemperatureFormatter: NSFormatter {
         return stringFromValue(value, unit: unit)
     }
     
+    // Return a localized string of the given unit, and if the unit is singular or plural is based on the given number.
+    // e.g. "°C", "degree Celsius", "degrees Fahrenheit"
+    func unitStringFromValue(value: Double, unit: TemperatureFormatterUnit) -> String {
+        let (_, unitString) = localizedNumberStringAndUnitStringFromValue(value, unit: unit)
+        
+        return unitString
+    }
+
     // Return the locale-appropriate unit, the same unit used by -stringFromCelsius:.
     func unitStringFromCelsius(numberInCelsius: Double, usedUnit unitp: UnsafeMutablePointer<TemperatureFormatterUnit>) -> String {
         let (value, unit) = localeAppropriateValueAndUnitFromCelsius(numberInCelsius)
@@ -142,14 +149,6 @@ class TemperatureFormatter: NSFormatter {
             unitp.memory = unit
         }
         return unitStringFromValue(value, unit: unit)
-    }
-    
-    // Return a localized string of the given unit, and if the unit is singular or plural is based on the given number.
-    // e.g. "°C", "degree Celsius", "degrees Fahrenheit"
-    func unitStringFromValue(value: Double, unit: TemperatureFormatterUnit) -> String {
-        let (_, unitString) = localizedNumberStringAndUnitStringFromValue(value, unit: unit)
-        
-        return unitString
     }
 
 }

@@ -17,11 +17,14 @@ class TemperatureFormatterTest: XCTestCase {
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        NSUserDefaults.standardUserDefaults().removeVolatileDomainForName(NSArgumentDomain)
+
         super.tearDown()
     }
     
-    func testShortUnitStyle_EnglishUS() {
+    func testShortUnitStyle_en_US() {
         NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_US"], forName: NSArgumentDomain)
+        
         let temperatureFormatter = TemperatureFormatter()
         temperatureFormatter.unitStyle = .Short
         
@@ -35,8 +38,9 @@ class TemperatureFormatterTest: XCTestCase {
         XCTAssertEqual(manyDegCString, "254.12°F")
     }
     
-    func testMediumUnitStyle_EnglishUS() {
+    func testMediumUnitStyle_en_US() {
         NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_US"], forName: NSArgumentDomain)
+        
         let temperatureFormatter = TemperatureFormatter()
         temperatureFormatter.unitStyle = .Medium
         
@@ -50,8 +54,9 @@ class TemperatureFormatterTest: XCTestCase {
         XCTAssertEqual(manyDegCString, "254.12°F")
     }
     
-    func testLongUnitStyle_EnglishUS() {
+    func testLongUnitStyle_en_US() {
         NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_US"], forName: NSArgumentDomain)
+        
         let temperatureFormatter = TemperatureFormatter()
         temperatureFormatter.unitStyle = .Long
         
@@ -68,8 +73,9 @@ class TemperatureFormatterTest: XCTestCase {
         XCTAssertEqual(manyDegCString, "254.12 degrees Fahrenheit")
     }
 
-    func testShortUnitStyle_EnglishMetric() {
+    func testShortUnitStyle_en_Metric() {
         NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_SE"], forName: NSArgumentDomain)
+        
         let temperatureFormatter = TemperatureFormatter()
         temperatureFormatter.unitStyle = .Short
         
@@ -83,8 +89,9 @@ class TemperatureFormatterTest: XCTestCase {
         XCTAssertEqual(manyDegCString, "123,4°C")
     }
 
-    func testMediumUnitStyle_EnglishMetric() {
+    func testMediumUnitStyle_en_Metric() {
         NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_SE"], forName: NSArgumentDomain)
+        
         let temperatureFormatter = TemperatureFormatter()
         temperatureFormatter.unitStyle = .Medium
         
@@ -98,8 +105,9 @@ class TemperatureFormatterTest: XCTestCase {
         XCTAssertEqual(manyDegCString, "123,4°C")
     }
     
-    func testLongUnitStyle_EnglishMetric() {
+    func testLongUnitStyle_en_Metric() {
         NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_SE"], forName: NSArgumentDomain)
+        
         let temperatureFormatter = TemperatureFormatter()
         temperatureFormatter.unitStyle = .Long
         
@@ -113,19 +121,20 @@ class TemperatureFormatterTest: XCTestCase {
         XCTAssertEqual(manyDegCString, "123,4 degrees Celsius")
     }
     
-//    func testDecimal() {
-//        let temperatureFormatter = TemperatureFormatter()
-//        temperatureFormatter.numberFormatter.numberStyle = .Short
-//        
-//        let zeroDegCString = temperatureFormatter.stringFromCelsius(0.0)
-//        XCTAssertEqual(zeroDegCString, "0°C")
-//        
-//        let oneDegCString = temperatureFormatter.stringFromCelsius(1.0)
-//        XCTAssertEqual(oneDegCString, "1°C")
-//        
-//        let manyDegCString = temperatureFormatter.stringFromCelsius(123.4)
-//        XCTAssertEqual(manyDegCString, "123°C")
-//    }
+    func testKelvin_en_US() {
+        NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_US"], forName: NSArgumentDomain)
+
+        let temperatureFormatter = TemperatureFormatter()
+
+        let zeroDegCString = temperatureFormatter.stringFromValue(0.0, unit: .Kelvin)
+        XCTAssertEqual(zeroDegCString, "0 K")
+        
+        let oneDegCString = temperatureFormatter.stringFromValue(1.0, unit: .Kelvin)
+        XCTAssertEqual(oneDegCString, "1 K")
+        
+        let manyDegCString = temperatureFormatter.stringFromValue(123.4, unit: .Kelvin)
+        XCTAssertEqual(manyDegCString, "123.4 K")
+    }
     
 
 //    func testPerformanceExample() {
