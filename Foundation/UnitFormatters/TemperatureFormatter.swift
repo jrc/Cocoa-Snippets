@@ -152,26 +152,3 @@ class TemperatureFormatter: NSFormatter {
     }
 
 }
-
-
-//import HealthKit
-//
-//extension TemperatureFormatter {
-//    
-//    class func temperatureFormatterUnitFromUnit(unit: HKUnit) -> TemperatureFormatterUnit
-//    {
-//        if unit == HKUnit.degreeCelsiusUnit() {
-//            return .Celsius
-//        }
-//        else if unit == HKUnit.degreeFahrenheitUnit() {
-//            return .Fahrenheit
-//        }
-//        else if unit == HKUnit.kelvinUnit() {
-//            return .Kelvin
-//        }
-//        
-//        NSException.raise(NSInvalidArgumentException, format: "No mapping for unit %@ to TemperatureFormatterUnit", arguments: getVaList([unit.unitString]))
-//        return .Celsius
-//    }
-//    
-//}

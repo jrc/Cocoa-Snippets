@@ -22,57 +22,6 @@ class TemperatureFormatterTest: XCTestCase {
         super.tearDown()
     }
     
-    func testShortUnitStyle_en_US() {
-        NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_US"], forName: NSArgumentDomain)
-        
-        let temperatureFormatter = TemperatureFormatter()
-        temperatureFormatter.unitStyle = .Short
-        
-        let zeroDegCString = temperatureFormatter.stringFromCelsius(0.0)
-        XCTAssertEqual(zeroDegCString, "32°F")
-        
-        let oneDegCString = temperatureFormatter.stringFromCelsius(1.0)
-        XCTAssertEqual(oneDegCString, "33.8°F")
-        
-        let manyDegCString = temperatureFormatter.stringFromCelsius(123.4)
-        XCTAssertEqual(manyDegCString, "254.12°F")
-    }
-    
-    func testMediumUnitStyle_en_US() {
-        NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_US"], forName: NSArgumentDomain)
-        
-        let temperatureFormatter = TemperatureFormatter()
-        temperatureFormatter.unitStyle = .Medium
-        
-        let zeroDegCString = temperatureFormatter.stringFromCelsius(0.0)
-        XCTAssertEqual(zeroDegCString, "32°F")
-        
-        let oneDegCString = temperatureFormatter.stringFromCelsius(1.0)
-        XCTAssertEqual(oneDegCString, "33.8°F")
-        
-        let manyDegCString = temperatureFormatter.stringFromCelsius(123.4)
-        XCTAssertEqual(manyDegCString, "254.12°F")
-    }
-    
-    func testLongUnitStyle_en_US() {
-        NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_US"], forName: NSArgumentDomain)
-        
-        let temperatureFormatter = TemperatureFormatter()
-        temperatureFormatter.unitStyle = .Long
-        
-        let zeroDegCString = temperatureFormatter.stringFromCelsius(0.0)
-        XCTAssertEqual(zeroDegCString, "32 degrees Fahrenheit")
-        
-        let oneDegCString = temperatureFormatter.stringFromCelsius(1.0)
-        XCTAssertEqual(oneDegCString, "33.8 degrees Fahrenheit")
-
-        let oneDegFString = temperatureFormatter.stringFromCelsius(-17.2222222)
-        XCTAssertEqual(oneDegFString, "1 degree Fahrenheit")
-
-        let manyDegCString = temperatureFormatter.stringFromCelsius(123.4)
-        XCTAssertEqual(manyDegCString, "254.12 degrees Fahrenheit")
-    }
-
     func testShortUnitStyle_en_Metric() {
         NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_SE"], forName: NSArgumentDomain)
         
@@ -121,6 +70,57 @@ class TemperatureFormatterTest: XCTestCase {
         XCTAssertEqual(manyDegCString, "123,4 degrees Celsius")
     }
     
+    func testShortUnitStyle_en_US() {
+        NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_US"], forName: NSArgumentDomain)
+        
+        let temperatureFormatter = TemperatureFormatter()
+        temperatureFormatter.unitStyle = .Short
+        
+        let zeroDegCString = temperatureFormatter.stringFromCelsius(0.0)
+        XCTAssertEqual(zeroDegCString, "32°F")
+        
+        let oneDegCString = temperatureFormatter.stringFromCelsius(1.0)
+        XCTAssertEqual(oneDegCString, "33.8°F")
+        
+        let manyDegCString = temperatureFormatter.stringFromCelsius(123.4)
+        XCTAssertEqual(manyDegCString, "254.12°F")
+    }
+    
+    func testMediumUnitStyle_en_US() {
+        NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_US"], forName: NSArgumentDomain)
+        
+        let temperatureFormatter = TemperatureFormatter()
+        temperatureFormatter.unitStyle = .Medium
+        
+        let zeroDegCString = temperatureFormatter.stringFromCelsius(0.0)
+        XCTAssertEqual(zeroDegCString, "32°F")
+        
+        let oneDegCString = temperatureFormatter.stringFromCelsius(1.0)
+        XCTAssertEqual(oneDegCString, "33.8°F")
+        
+        let manyDegCString = temperatureFormatter.stringFromCelsius(123.4)
+        XCTAssertEqual(manyDegCString, "254.12°F")
+    }
+    
+    func testLongUnitStyle_en_US() {
+        NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_US"], forName: NSArgumentDomain)
+        
+        let temperatureFormatter = TemperatureFormatter()
+        temperatureFormatter.unitStyle = .Long
+        
+        let zeroDegCString = temperatureFormatter.stringFromCelsius(0.0)
+        XCTAssertEqual(zeroDegCString, "32 degrees Fahrenheit")
+        
+        let oneDegCString = temperatureFormatter.stringFromCelsius(1.0)
+        XCTAssertEqual(oneDegCString, "33.8 degrees Fahrenheit")
+        
+        let oneDegFString = temperatureFormatter.stringFromCelsius(-17.2222222)
+        XCTAssertEqual(oneDegFString, "1 degree Fahrenheit")
+        
+        let manyDegCString = temperatureFormatter.stringFromCelsius(123.4)
+        XCTAssertEqual(manyDegCString, "254.12 degrees Fahrenheit")
+    }
+    
     func testKelvin_en_US() {
         NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_US"], forName: NSArgumentDomain)
 
@@ -135,13 +135,5 @@ class TemperatureFormatterTest: XCTestCase {
         let manyDegCString = temperatureFormatter.stringFromValue(123.4, unit: .Kelvin)
         XCTAssertEqual(manyDegCString, "123.4 K")
     }
-    
-
-//    func testPerformanceExample() {
-//        // This is an example of a performance test case.
-//        self.measureBlock {
-//            // Put the code you want to measure the time of here.
-//        }
-//    }
     
 }
