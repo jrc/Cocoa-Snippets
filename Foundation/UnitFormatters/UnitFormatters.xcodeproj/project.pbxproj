@@ -7,22 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2312E98B1B9E3AE500649588 /* VolumeFormatter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2312E9881B9E3AE500649588 /* VolumeFormatter.strings */; settings = {ASSET_TAGS = (); }; };
-		2312E98C1B9E3AE500649588 /* VolumeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2312E9891B9E3AE500649588 /* VolumeFormatter.swift */; settings = {ASSET_TAGS = (); }; };
-		2312E98D1B9E3AE500649588 /* VolumeFormatter+HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2312E98A1B9E3AE500649588 /* VolumeFormatter+HealthKit.swift */; settings = {ASSET_TAGS = (); }; };
-		2312E98E1B9E3AFF00649588 /* VolumeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2312E9891B9E3AE500649588 /* VolumeFormatter.swift */; };
-		2312E98F1B9E3B0A00649588 /* VolumeFormatter+HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2312E98A1B9E3AE500649588 /* VolumeFormatter+HealthKit.swift */; };
+		231087C51B9ECB9B00051161 /* TemperatureFormatter+HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231087BF1B9ECB9B00051161 /* TemperatureFormatter+HealthKit.swift */; settings = {ASSET_TAGS = (); }; };
+		231087C61B9ECB9B00051161 /* TemperatureFormatter+HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231087BF1B9ECB9B00051161 /* TemperatureFormatter+HealthKit.swift */; settings = {ASSET_TAGS = (); }; };
+		231087C71B9ECB9B00051161 /* TemperatureFormatter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 231087C01B9ECB9B00051161 /* TemperatureFormatter.strings */; settings = {ASSET_TAGS = (); }; };
+		231087C81B9ECB9B00051161 /* TemperatureFormatter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 231087C01B9ECB9B00051161 /* TemperatureFormatter.strings */; settings = {ASSET_TAGS = (); }; };
+		231087C91B9ECB9B00051161 /* TemperatureFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231087C11B9ECB9B00051161 /* TemperatureFormatter.swift */; settings = {ASSET_TAGS = (); }; };
+		231087CA1B9ECB9B00051161 /* TemperatureFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231087C11B9ECB9B00051161 /* TemperatureFormatter.swift */; settings = {ASSET_TAGS = (); }; };
+		231087CB1B9ECB9B00051161 /* VolumeFormatter+HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231087C21B9ECB9B00051161 /* VolumeFormatter+HealthKit.swift */; settings = {ASSET_TAGS = (); }; };
+		231087CC1B9ECB9B00051161 /* VolumeFormatter+HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231087C21B9ECB9B00051161 /* VolumeFormatter+HealthKit.swift */; settings = {ASSET_TAGS = (); }; };
+		231087CD1B9ECB9B00051161 /* VolumeFormatter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 231087C31B9ECB9B00051161 /* VolumeFormatter.strings */; settings = {ASSET_TAGS = (); }; };
+		231087CE1B9ECB9B00051161 /* VolumeFormatter.strings in Resources */ = {isa = PBXBuildFile; fileRef = 231087C31B9ECB9B00051161 /* VolumeFormatter.strings */; settings = {ASSET_TAGS = (); }; };
+		231087CF1B9ECB9B00051161 /* VolumeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231087C41B9ECB9B00051161 /* VolumeFormatter.swift */; settings = {ASSET_TAGS = (); }; };
+		231087D01B9ECB9B00051161 /* VolumeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 231087C41B9ECB9B00051161 /* VolumeFormatter.swift */; settings = {ASSET_TAGS = (); }; };
 		232855381B9CF21900076CA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232855371B9CF21900076CA3 /* AppDelegate.swift */; };
 		2328553A1B9CF21900076CA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232855391B9CF21900076CA3 /* ViewController.swift */; };
 		2328553D1B9CF21900076CA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2328553B1B9CF21900076CA3 /* Main.storyboard */; };
 		2328553F1B9CF21900076CA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2328553E1B9CF21900076CA3 /* Assets.xcassets */; };
 		232855421B9CF21900076CA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 232855401B9CF21900076CA3 /* LaunchScreen.storyboard */; };
 		2328555C1B9CF23000076CA3 /* TemperatureFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2328555A1B9CF23000076CA3 /* TemperatureFormatterTest.swift */; settings = {ASSET_TAGS = (); }; };
-		2328555E1B9CF23400076CA3 /* TemperatureFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2328555D1B9CF23400076CA3 /* TemperatureFormatter.swift */; settings = {ASSET_TAGS = (); }; };
-		2328555F1B9CF23400076CA3 /* TemperatureFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2328555D1B9CF23400076CA3 /* TemperatureFormatter.swift */; settings = {ASSET_TAGS = (); }; };
 		232855671B9CF5A900076CA3 /* VolumeFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232855661B9CF5A900076CA3 /* VolumeFormatterTest.swift */; settings = {ASSET_TAGS = (); }; };
-		232855691B9CF5B800076CA3 /* TemperatureFormatter+HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232855681B9CF5B800076CA3 /* TemperatureFormatter+HealthKit.swift */; settings = {ASSET_TAGS = (); }; };
-		2328556A1B9CF5B800076CA3 /* TemperatureFormatter+HealthKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232855681B9CF5B800076CA3 /* TemperatureFormatter+HealthKit.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2312E9881B9E3AE500649588 /* VolumeFormatter.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = VolumeFormatter.strings; sourceTree = "<group>"; };
-		2312E9891B9E3AE500649588 /* VolumeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeFormatter.swift; sourceTree = "<group>"; };
-		2312E98A1B9E3AE500649588 /* VolumeFormatter+HealthKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VolumeFormatter+HealthKit.swift"; sourceTree = "<group>"; };
+		231087BF1B9ECB9B00051161 /* TemperatureFormatter+HealthKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TemperatureFormatter+HealthKit.swift"; sourceTree = "<group>"; };
+		231087C01B9ECB9B00051161 /* TemperatureFormatter.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = TemperatureFormatter.strings; sourceTree = "<group>"; };
+		231087C11B9ECB9B00051161 /* TemperatureFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureFormatter.swift; sourceTree = "<group>"; };
+		231087C21B9ECB9B00051161 /* VolumeFormatter+HealthKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VolumeFormatter+HealthKit.swift"; sourceTree = "<group>"; };
+		231087C31B9ECB9B00051161 /* VolumeFormatter.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = VolumeFormatter.strings; sourceTree = "<group>"; };
+		231087C41B9ECB9B00051161 /* VolumeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeFormatter.swift; sourceTree = "<group>"; };
 		232855341B9CF21900076CA3 /* UnitFormatters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitFormatters.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		232855371B9CF21900076CA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		232855391B9CF21900076CA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,9 +55,7 @@
 		232855481B9CF21900076CA3 /* UnitFormattersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitFormattersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2328554E1B9CF21900076CA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2328555A1B9CF23000076CA3 /* TemperatureFormatterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureFormatterTest.swift; sourceTree = "<group>"; };
-		2328555D1B9CF23400076CA3 /* TemperatureFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureFormatter.swift; sourceTree = "<group>"; };
 		232855661B9CF5A900076CA3 /* VolumeFormatterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeFormatterTest.swift; sourceTree = "<group>"; };
-		232855681B9CF5B800076CA3 /* TemperatureFormatter+HealthKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TemperatureFormatter+HealthKit.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,15 +76,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		231087BE1B9ECB9B00051161 /* UnitFormatters */ = {
+			isa = PBXGroup;
+			children = (
+				231087C11B9ECB9B00051161 /* TemperatureFormatter.swift */,
+				231087BF1B9ECB9B00051161 /* TemperatureFormatter+HealthKit.swift */,
+				231087C01B9ECB9B00051161 /* TemperatureFormatter.strings */,
+				231087C41B9ECB9B00051161 /* VolumeFormatter.swift */,
+				231087C21B9ECB9B00051161 /* VolumeFormatter+HealthKit.swift */,
+				231087C31B9ECB9B00051161 /* VolumeFormatter.strings */,
+			);
+			path = UnitFormatters;
+			sourceTree = "<group>";
+		};
 		2328552B1B9CF21900076CA3 = {
 			isa = PBXGroup;
 			children = (
-				2328555D1B9CF23400076CA3 /* TemperatureFormatter.swift */,
-				232855681B9CF5B800076CA3 /* TemperatureFormatter+HealthKit.swift */,
-				2312E9891B9E3AE500649588 /* VolumeFormatter.swift */,
-				2312E9881B9E3AE500649588 /* VolumeFormatter.strings */,
-				2312E98A1B9E3AE500649588 /* VolumeFormatter+HealthKit.swift */,
-				232855361B9CF21900076CA3 /* UnitFormatters */,
+				231087BE1B9ECB9B00051161 /* UnitFormatters */,
+				232855361B9CF21900076CA3 /* UnitFormattersApp */,
 				2328554B1B9CF21900076CA3 /* UnitFormattersTests */,
 				232855351B9CF21900076CA3 /* Products */,
 			);
@@ -95,7 +108,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		232855361B9CF21900076CA3 /* UnitFormatters */ = {
+		232855361B9CF21900076CA3 /* UnitFormattersApp */ = {
 			isa = PBXGroup;
 			children = (
 				232855371B9CF21900076CA3 /* AppDelegate.swift */,
@@ -105,7 +118,7 @@
 				232855401B9CF21900076CA3 /* LaunchScreen.storyboard */,
 				232855431B9CF21900076CA3 /* Info.plist */,
 			);
-			path = UnitFormatters;
+			path = UnitFormattersApp;
 			sourceTree = "<group>";
 		};
 		2328554B1B9CF21900076CA3 /* UnitFormattersTests */ = {
@@ -199,9 +212,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				232855421B9CF21900076CA3 /* LaunchScreen.storyboard in Resources */,
+				231087CD1B9ECB9B00051161 /* VolumeFormatter.strings in Resources */,
 				2328553F1B9CF21900076CA3 /* Assets.xcassets in Resources */,
+				231087C71B9ECB9B00051161 /* TemperatureFormatter.strings in Resources */,
 				2328553D1B9CF21900076CA3 /* Main.storyboard in Resources */,
-				2312E98B1B9E3AE500649588 /* VolumeFormatter.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +223,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				231087C81B9ECB9B00051161 /* TemperatureFormatter.strings in Resources */,
+				231087CE1B9ECB9B00051161 /* VolumeFormatter.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,12 +235,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2312E98C1B9E3AE500649588 /* VolumeFormatter.swift in Sources */,
-				232855691B9CF5B800076CA3 /* TemperatureFormatter+HealthKit.swift in Sources */,
+				231087CF1B9ECB9B00051161 /* VolumeFormatter.swift in Sources */,
+				231087C51B9ECB9B00051161 /* TemperatureFormatter+HealthKit.swift in Sources */,
 				2328553A1B9CF21900076CA3 /* ViewController.swift in Sources */,
 				232855381B9CF21900076CA3 /* AppDelegate.swift in Sources */,
-				2312E98D1B9E3AE500649588 /* VolumeFormatter+HealthKit.swift in Sources */,
-				2328555E1B9CF23400076CA3 /* TemperatureFormatter.swift in Sources */,
+				231087CB1B9ECB9B00051161 /* VolumeFormatter+HealthKit.swift in Sources */,
+				231087C91B9ECB9B00051161 /* TemperatureFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,12 +248,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2328555F1B9CF23400076CA3 /* TemperatureFormatter.swift in Sources */,
-				2328556A1B9CF5B800076CA3 /* TemperatureFormatter+HealthKit.swift in Sources */,
+				231087D01B9ECB9B00051161 /* VolumeFormatter.swift in Sources */,
+				231087C61B9ECB9B00051161 /* TemperatureFormatter+HealthKit.swift in Sources */,
 				2328555C1B9CF23000076CA3 /* TemperatureFormatterTest.swift in Sources */,
-				2312E98E1B9E3AFF00649588 /* VolumeFormatter.swift in Sources */,
-				2312E98F1B9E3B0A00649588 /* VolumeFormatter+HealthKit.swift in Sources */,
 				232855671B9CF5A900076CA3 /* VolumeFormatterTest.swift in Sources */,
+				231087CC1B9ECB9B00051161 /* VolumeFormatter+HealthKit.swift in Sources */,
+				231087CA1B9ECB9B00051161 /* TemperatureFormatter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +323,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -345,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -356,7 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = UnitFormatters/Info.plist;
+				INFOPLIST_FILE = UnitFormattersApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mac.jrc.UnitFormatters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -367,7 +383,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = UnitFormatters/Info.plist;
+				INFOPLIST_FILE = UnitFormattersApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mac.jrc.UnitFormatters;
 				PRODUCT_NAME = "$(TARGET_NAME)";

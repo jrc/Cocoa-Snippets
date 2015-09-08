@@ -22,7 +22,10 @@ class TemperatureFormatterTest: XCTestCase {
         super.tearDown()
     }
     
-    func testShortUnitStyle_en_Metric() {
+    
+    // MARK: -
+
+    func testShortUnitStyle_en_SE() {
         NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_SE"], forName: NSArgumentDomain)
         
         let temperatureFormatter = TemperatureFormatter()
@@ -38,7 +41,7 @@ class TemperatureFormatterTest: XCTestCase {
         XCTAssertEqual(manyDegCString, "123,4°C")
     }
 
-    func testMediumUnitStyle_en_Metric() {
+    func testMediumUnitStyle_en_SE() {
         NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_SE"], forName: NSArgumentDomain)
         
         let temperatureFormatter = TemperatureFormatter()
@@ -54,7 +57,7 @@ class TemperatureFormatterTest: XCTestCase {
         XCTAssertEqual(manyDegCString, "123,4°C")
     }
     
-    func testLongUnitStyle_en_Metric() {
+    func testLongUnitStyle_en_SE() {
         NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_SE"], forName: NSArgumentDomain)
         
         let temperatureFormatter = TemperatureFormatter()
@@ -70,6 +73,24 @@ class TemperatureFormatterTest: XCTestCase {
         XCTAssertEqual(manyDegCString, "123,4 degrees Celsius")
     }
     
+    func testKelvin_en_SE() {
+        NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_SE"], forName: NSArgumentDomain)
+        
+        let temperatureFormatter = TemperatureFormatter()
+        
+        let zeroDegCString = temperatureFormatter.stringFromValue(0.0, unit: .Kelvin)
+        XCTAssertEqual(zeroDegCString, "0 K")
+        
+        let oneDegCString = temperatureFormatter.stringFromValue(1.0, unit: .Kelvin)
+        XCTAssertEqual(oneDegCString, "1 K")
+        
+        let manyDegCString = temperatureFormatter.stringFromValue(123.4, unit: .Kelvin)
+        XCTAssertEqual(manyDegCString, "123,4 K")
+    }
+
+    
+    // MARK: -
+
     func testShortUnitStyle_en_US() {
         NSUserDefaults.standardUserDefaults().setVolatileDomain(["AppleLocale" : "en_US"], forName: NSArgumentDomain)
         
